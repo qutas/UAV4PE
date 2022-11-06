@@ -73,7 +73,7 @@ catkin_make
 ```
 
 
-### Install QUTUAS Flight Stack
+### Install QUTAS Flight Stack
 
 The Queensland University of Technology UAS Flight Stack is installed using the following commands:
 
