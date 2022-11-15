@@ -1,4 +1,4 @@
-# PExUAV
+# UAV4PE
 Open-Source Framework for Planetary Exploration UAV Autonomous Mission Planning
 
 
@@ -21,7 +21,7 @@ Open-Source Framework for Planetary Exploration UAV Autonomous Mission Planning
 ## 1) Synopsis
 
 
-The PExUAV framework provides:
+The UAV4PE framework provides:
 
 - Installation instructions
 - Code for Planetary Exploration UAV Autonomous Mission Planning. The framework relies on diverse software tools including Linux (Ubuntu 20.04), the Robotic Operation System (ROS1), C++, Python and Julia libraries.
