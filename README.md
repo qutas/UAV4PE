@@ -63,7 +63,7 @@ sudo rosdep init
 rosdep update
 ```
 
-The commands presented previously are a compilation [from here](https://wiki.ros.org/noetic/Installation/Ubuntu). Ensure the previous commands successfully downloaded ROS noetic desktop and installed it. If ROS was installed with no errors proceed with the next steps, otherwise, please report the issues you founded [here](https://github.com/qutas/UAV4PE/issues).
+The commands presented previously are a compilation [from here](https://wiki.ros.org/noetic/Installation/Ubuntu). Ensure the previous commands successfully downloaded ROS noetic desktop and installed it. If ROS was installed with no errors proceed with the next steps, otherwise, please report the issues you found [here](https://github.com/qutas/UAV4PE/issues).
 
 ### 2.2) Create ROS workspace to add packages
 
@@ -174,11 +174,49 @@ source ~/catkin_ws/devel/setup.bash
 Well done! Your system is ready to launch the simulation environment. 
 
 ### 2.6) Launch simulation:
+In a terminal use the following command:
 ```
 roslaunch uav4pe_environments load_map-16A.launch runSimulation:=True
 ```
+To close the simulation you can type Ctrl+c in the terminal.
 
-## 3) Getting the simulation environment going
+### 2.7) Install uav4pe_navigation package:
+
+To install the latest version of the uav4pe_navigation repository you can use:
+<!-- (ignore lines with #, those are bash comments): -->
+
+```shell script
+cd ~/catkin_ws/src
+
+git clone https://github.com/qutas/uav4pe_navigation
+
+cd ~/catkin_ws
+
+catkin_make
+
+source ~/catkin_ws/devel/setup.bash
+```
+Well done! Your system is ready to launch the simulation environment with the navigation package. 
+
+### 2.8) Launch navigation package in simulation:
+
+We will need three (3) terminals windows to use the navigation package. Run each of the commands below in a  single terminal:
+
+```shell script
+roslaunch uav4pe_environments load_map-16A.launch runSimulation:=True
+
+roslaunch uav4pe_navigation load_navigation.launch runSimulation:=True
+
+rosrun uav4pe_navigation send_input
+
+```
+If you found issues, please report the issues [here](https://github.com/qutas/UAV4PE/issues). Otherwise, you should be able to send actions to the navigation module by typing a number between 0 to 4 in the 'send_input' terminal: 0) Stay on the ground, 1) Hover, 2) Explore, 3) Inspect, and 4) Land.
+
+<p align="center">
+	<img src="figures/sim_rviz.png">
+</p>
+
+## 3) Getting the emulation environment going
 
 Emulation Installation steps (Tested on clean Ubuntu 20.04)
 
