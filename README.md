@@ -190,6 +190,8 @@ cd ~/catkin_ws/src
 
 git clone https://github.com/qutas/uav4pe_navigation
 
+pip3 install pygame
+
 cd ~/catkin_ws
 
 catkin_make
